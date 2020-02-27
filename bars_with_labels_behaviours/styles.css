@@ -1,0 +1,11 @@
+rect:hover {
+    fill: orange; 
+    transition: all 0.3s; 
+}
+
+/* rect {
+    -moz-transition: all 0.5s; 
+    -o-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+} */

@@ -93,7 +93,7 @@ d3.selectAll("button")
     const buttonId = d3.select(this).attr("id"); 
 
     if (buttonId == "add_one") {
-
+        
         const minValue  = 2; 
         const maxValue = 25 - minValue; 
         const newNumber = Math.floor(Math.random() * maxValue) + minValue; 
