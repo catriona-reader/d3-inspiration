@@ -90,8 +90,9 @@ const render = data => {
             yScale.domain([0, d3.max(data, d => d.Recycling_Rates)])
             xScale.domain(d3.range(data.length))
 
-            d3.select("#x_axis").call(xAxis); 
-            d3.select("#y_axis").call(yAxis); 
+            svg.select("#y_axis")
+                .transition().duration(500)
+                .call(yAxis); 
 
             //editing this title part 
             titleText = `Recycling Rates by Borough - ${buttonId}`
@@ -106,13 +107,14 @@ const render = data => {
                 .attr("y", d => h ) // keeping it out of sight 
                 .attr("width", d => xScale.bandwidth())
                 .attr("height", d => h - yScale(d.Recycling_Rates) - margin.bottom)
-                .attr("fill",  d => `rgb(0, ${Math.round( d.Recycling_Rates * 3.5 )}, 0)`)
                 .merge(bars)
                 .transition().duration(500)
                 .attr("x", (d, i) => xScale(i) )
                 .attr("y", d => yScale(d.Recycling_Rates) )
                 .attr("width", d => xScale.bandwidth())
                 .attr("height", d => h - yScale(d.Recycling_Rates) - margin.bottom)
+                .attr("fill",  d => `rgb(0, ${Math.round( d.Recycling_Rates * 3.5 )}, 0)`)
+                
 
     
             bars.exit() // now only referring to the new element 
