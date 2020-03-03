@@ -1,0 +1,17 @@
+
+.tick line {
+    stroke: #C0C0BB;
+  }
+
+#title {
+    font-family: sans-serif; 
+    font-size: 3em; 
+}
+text {
+  fill: #62656e; 
+}
+ 
+
+.domain {
+  stroke:#FFFFFF; 
+}
