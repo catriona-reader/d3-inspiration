@@ -1,0 +1,12 @@
+p {
+    display: inline-block;
+}
+
+input {
+    height: 250px;
+    width: 30px;
+
+    /* Orient vertically */
+    -webkit-appearance: slider-vertical;
+    writing-mode: bt-lr;
+}

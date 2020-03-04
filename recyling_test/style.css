@@ -3,15 +3,36 @@
     stroke: #C0C0BB;
   }
 
-#title {
-    font-family: sans-serif; 
-    font-size: 3em; 
-}
 text {
   fill: #62656e; 
+  font-family: sans-serif; 
+}
+
+p {
+  color: #62656e; 
+  font-family: sans-serif; 
 }
  
+#title {
+  font-size: 2.5em;  
+}
+#source {
+  font-size: 0.8em; 
+}
 
 .domain {
   stroke:#FFFFFF; 
+}
+
+#buttonDiv {
+  margin: 10px 100px 30px 100px;  
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+button {
+  width: 10%; 
+  color: #62656e; 
+  font-family: sans-serif; 
+  display: inline-block; 
 }
