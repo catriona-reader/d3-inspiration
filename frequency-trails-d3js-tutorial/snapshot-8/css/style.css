@@ -1,0 +1,20 @@
+#wrapper {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.peak-cursor {
+    display: none;
+}
+
+.peak-cursor circle {
+    stroke: #37455D;
+    stroke-width: 2;
+    fill: #fafafa;
+}
+
+.peak-cursor text {
+    fill: #161C25;
+    font-weight: bold;
+    text-anchor: middle;
+}
