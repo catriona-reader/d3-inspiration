@@ -12,7 +12,9 @@ const dataset = [
 ];
 
 // set up the stack method 
-const stack = d3.stack().keys(["apples", "oranges", "grapes"])
+const stack = d3.stack()
+                .order(d3.stackOrderDescending)
+                .keys(["apples", "oranges", "grapes"])
 
 // stack that data
 const series = stack(dataset); 
@@ -34,7 +36,7 @@ const xScale = d3.scaleBand()
 
 const yScale = d3.scaleLinear()
     .domain([0, d3.max(dataset, d => d.apples + d.oranges + d.grapes)])
-    .range([0, h]);
+    .range([h, 0]);
     
 // setting up my own colorzzzzz
 const colors = d3.scaleOrdinal().range(['#233C67', '#4470AD',  '#99AFD7'])
@@ -59,6 +61,6 @@ const rects = groups.selectAll("rect")
     .enter()
     .append("rect")
     .attr("x", (d, i) => xScale(i))
-    .attr("y", d => yScale(d[0])) // the baseline value, d[0]
-    .attr("height", d => yScale(d[1]) - yScale(d[0])) // the top valye, d[0] moins le baseline 
+    .attr("y", d => yScale(d[1])) //
+    .attr("height", d => yScale(d[0]) - yScale(d[1])) // 
     .attr("width", d => xScale.bandwidth())
